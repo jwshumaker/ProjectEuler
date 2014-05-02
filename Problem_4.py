@@ -1,7 +1,7 @@
 '''
 Created on Apr 7, 2014
 
-@author: spiff
+@author: JWShumaker
 ProjectEuler.net
 Problem ID 4
 A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.

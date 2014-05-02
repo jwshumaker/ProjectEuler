@@ -17,7 +17,7 @@ namespace ProjectEuler
     // If all the numbers from 1 to 1000 (one thousand) inclusive were written out
     // in words, how many letters would be used?
     //
-    // Soluction:
+    // Solution:
     // First, create a look-up table of the length of the corresponding sub-strings.
     // Next, while looping through the numbers, instead of forming the corresponding
     // words, sum up the letter counts of the substrings.

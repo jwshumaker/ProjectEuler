@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 namespace ProjectEuler
 {
     // <summary>
+    // @author: JWShumaker
+    //
     // ProjectEuler.net
     // Problem ID 17
     // If the numbers 1 to 5 are written out in words: one, two, three, four, five,

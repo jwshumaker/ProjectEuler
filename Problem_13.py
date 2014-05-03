@@ -4,7 +4,7 @@ Created on Apr 11, 2014
 @author: JWShumaker
 
 ProjectEuler.net
-Problem ID 12
+Problem ID 13
 Work out the first ten digits of the sum of the following one-hundred 50-digit numbers.
 
 37107287533902102798797998220837590246510135740250

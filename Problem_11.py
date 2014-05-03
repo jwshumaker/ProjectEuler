@@ -37,7 +37,7 @@ SOLUTION:
 We will read our grid in as a list.  Our program will depend on being given
  the height and width of the grid.  
  
-Our solution algorithm will be a sequential search of diagonal left, right, down,
+Our solution algorithm will be a sequential search of left, right, down,
  diagonal down left and diagonal down right, starting in the top left of the grid.
  
 Note that we don't bother searching up or either upwards diagonal.  Doing so would

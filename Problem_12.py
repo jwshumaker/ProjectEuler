@@ -114,7 +114,7 @@ We will store these numbers as a list of lists, where each index is a digit.  Th
  through each number, starting with least significant digit, add the digits together
  and place in the corresponding digit of our result.
  
-After add all digits of the given numbers, we will will maintain the digits of our
+After adding all digits of the given numbers, we will maintain the digits of our
  result.  Our answer will be found in the first 10 digits of the result.
 '''  
 

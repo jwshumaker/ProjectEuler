@@ -16,7 +16,11 @@ A blind search takes much too long!
 Instead, working a few examples yields a result based on combinations.  In fact, for
  for any NxN graph, finding (N*2) choose (N) will count the number of paths.  This is
  due to the rectilinear nature of all possible paths.  Since we can only move right
- or down, all solutions have the same length... N*2.  
+ or down, all solutions have the same length... N*2.  You can regard any
+ valid path as a sequence of R's and D's.  However, since the number of R's and D's is
+ fixed, you can simplify the problem to counting the number of ways to distribute a
+ number N of R's through N*2 slots... the placement of the D's is then forced.  Hence,
+ N*2 choose N is our solution.
 '''
 
 # A grid class.

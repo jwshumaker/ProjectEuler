@@ -4,7 +4,7 @@ Created on Apr 12, 2014
 @author: JWShumaker
 
 ProjectEuler.net
-Problem ID 13
+Problem ID 14
 The following iterative sequence is defined for the set of positive integers:
 
 n -> n/2 (n is even)
@@ -25,6 +25,9 @@ Solution:
 Iterate through the natural numbers, computing the sequence length for each number.
  Record, in a dictionary, each number paired with it's sequence length.  While
  computing sequence lengths, look up each term to see if it has been seen before.
+ If it has, append the known length to the length currently being constructed and
+ terminate the current iteration. After our loop terminates, scan through the
+ dictionary for the largest chain length and return it's key.
 '''
 
 class CollatzNumbers:

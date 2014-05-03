@@ -4,7 +4,7 @@ Created on Apr 15, 2014
 @author: JWShumaker
 
 ProjectEuler.net
-Problem ID 14
+Problem ID 15
 Starting in the top left corner of a 2x2 grid, and only being able to move to the right and down,
  there are exactly 6 routes to the bottom right corner.
  

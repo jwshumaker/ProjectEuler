@@ -112,24 +112,14 @@ namespace ProjectEuler
         {
             if (number < 20)
             {
-                return Under20(number);
+                // Returns the word for a one or two digit number under 20.
+                return digits_under_20[number];
             }
             else
             {
-                return Over19(number);
+                // Returns the word for a two digit number over 19.
+                return digits_over_20[number / 10] + (number % 10 > 0 ? "-" + digits_under_20[number % 10] : "");
             }
-        }
-
-        // Returns the word for a two digit number over 19.
-        private string Over19 (int number)
-        {
-            return digits_over_20[number / 10] + (number % 10 > 0 ? "-" + digits_under_20[number % 10] : "");
-        }
-
-        // Returns the word for a one or two digit number under 20.
-        private string Under20(int number)
-        {
-            return digits_under_20[number];
         }
     }
 

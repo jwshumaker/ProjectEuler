@@ -54,7 +54,7 @@ namespace ProjectEuler
     {
         static void Main(string[] args)
         {
-            // Our triangle stored as a jagged array.
+            // Our triangle stored as a list of int arrays.
             List<int[]> the_triangle;
 
             // Where is our triangle's data?

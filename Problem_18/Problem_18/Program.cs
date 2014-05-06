@@ -67,8 +67,6 @@ namespace ProjectEuler
             System.Console.WriteLine(ProcessTriangle(ref the_triangle));
 
             System.Console.ReadLine();
-
-
         }
 
         private static int ProcessTriangle(ref List<int[]> the_triangle)
@@ -85,6 +83,7 @@ namespace ProjectEuler
             // This is the core of our algorithm for this solution.
             // Iterate through each row.  For each element, add the max of the
             // adjacent parent elements.  
+            // Note that we necessarily begin with the second row.
             for (int row = 1; row < triangle_height; ++row)
             {
                 for (int element = 0; element < the_triangle[row].Length; ++element)
@@ -98,9 +97,9 @@ namespace ProjectEuler
                     else if (element == the_triangle[row].Length - 1)
                     {
                         // There is only one adjacent parent element in this case.
-                        // That element is the last element of the row above.
+                        // That parent element is the last element of the row above.
                         // Note that this element is the last element of this row,
-                        // hence the last element of the row above is element - 1.
+                        // hence the last (parent) element of the row above is element - 1.
                         the_triangle[row][element] += the_triangle[row - 1][element - 1];
                     }
                     else

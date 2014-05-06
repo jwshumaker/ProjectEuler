@@ -54,45 +54,84 @@ namespace ProjectEuler
         static void Main(string[] args)
         {
             // Our triangle stored as a jagged array.
-            int[][] the_triangle;
+            List<int[]> the_triangle;
 
             // Where is our triangle's data?
-            string triangle_data = "C:\\Users\\spiff\\Documents\\Visual Studio 2013\\Projects\\ProjectEuler\\ProjectEuler\\Problem_18_Data.txt";
+            string triangle_data = "C:\\Users\\spiff\\Documents\\GitHub\\ProjectEuler\\Problem_18\\Problem_18\\Problem_18_Data.txt";
 
             // Fill our triangle with data.
-            ReadTriangle(triangle_data);//, out the_triangle);
+            ReadTriangle(triangle_data, out the_triangle);
+
+            // Process the triangle and print the solution.
+            System.Console.WriteLine(ProcessTriangle(ref the_triangle));
 
             System.Console.ReadLine();
 
 
         }
 
+        private static int ProcessTriangle(ref List<int[]> the_triangle)
+        {
+            // Let's store the size of our list, we'll be using it a lot.
+            int triangle_height = the_triangle.Count();
+
+            // A one row triangle will trip our algorithm.
+            if (triangle_height == 1)
+            {
+                return the_triangle[0].Max();
+            }
+
+            // This is the core of our algorithm for this solution.
+            // Iterate through each row.  For each element, add the max of the
+            // adjacent parent elements.  
+            for (int row = 1; row < triangle_height; ++row)
+            {
+                for (int element = 0; element < the_triangle[row].Length; ++element)
+                {
+                    if (element == 0)
+                    {
+                        // There is only one adjacent parent element in this case.
+                        // That element is the first element of the row above.
+                        the_triangle[row][element] += the_triangle[row - 1][element];
+                    }
+                    else if (element == the_triangle[row].Length - 1)
+                    {
+                        // There is only one adjacent parent element in this case.
+                        // That element is the last element of the row above.
+                        // Note that this element is the last element of this row,
+                        // hence the last element of the row above is element - 1.
+                        the_triangle[row][element] += the_triangle[row - 1][element - 1];
+                    }
+                    else
+                    {
+                        // There are two adjacent parent elements.  Let's add the greatest.
+                        the_triangle[row][element] += Math.Max(the_triangle[row - 1][element - 1], the_triangle[row - 1][element]);
+                    }
+                }
+            }
+
+            // Now, our solution to the problem is the largest element of the bottom row.
+            return the_triangle[triangle_height - 1].Max();
+        }
+
         // Given a file name and a reference to a jagged array, fills the array with
         // data from the file.
-        private static void ReadTriangle(string file_name)//, out int[][] the_triangle)
+        private static void ReadTriangle(string file_name, out List<int[]> the_triangle)
         {
+            // Initialize our list of arrays.
+            the_triangle = new List<int[]>();
+
             // Read the file into an array called lines.
             string[] lines = System.IO.File.ReadAllLines(file_name);
 
             // Pass through lines parsing it into the_triangle.
             foreach (string line in lines)
             {
-                string[] row = line.Split(' ');
-                int[] new_row = new int[row.Length];
-
-                for (int i = 0; i < row.Length; ++i)
-                {
-                    new_row[i] = Convert.ToInt32(row[i]);
-                }
-
-                foreach (int number in new_row)
-                {
-                    System.Console.WriteLine(number + " ");
-                }
-
-                System.Console.WriteLine("\n");
-            }
-
+                // Convert the string 'line' into an array of strings split on spaces.
+                // Then convert the array of strings into an array of ints.
+                // Finally, add this new array to our triangle of numbers.
+                the_triangle.Add(Array.ConvertAll(line.Split(' '), int.Parse));
+            }     
         }
     }
 }

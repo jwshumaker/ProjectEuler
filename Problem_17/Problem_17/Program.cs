@@ -133,7 +133,6 @@ namespace ProjectEuler
 
             for (var i = 1; i < 1001; ++i)
             {
-                System.Console.WriteLine(words_list.GetWord(i));
                 letter_count += CountLetters(words_list.GetWord(i));
             };
 

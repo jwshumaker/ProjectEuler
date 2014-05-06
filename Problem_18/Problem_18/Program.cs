@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace ProjectEuler
 {
     // <summary>
+    // @author: JWShumaker
     // ProjectEuler.net
     // Problem ID 18
     // By starting at the top of the triangle below and moving to adjacent numbers on
